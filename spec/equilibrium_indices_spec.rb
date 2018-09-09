@@ -33,4 +33,14 @@ describe EquilibriumIndices do
       expect(EquilibriumIndices.sum_of_first_n(array, index)).to eq(expected_sum)
     end
   end
+
+  describe '.sum_of_last_n' do
+  	let(:array) { [1, 2, 3, 4, 5] }
+  	let(:index) { 3 }
+  	let(:expected_sum) { 12 }
+
+    it 'returns sum of first n elements' do
+      expect(EquilibriumIndices.sum_of_last_n(array, index)).to eq(expected_sum)
+    end
+  end
 end

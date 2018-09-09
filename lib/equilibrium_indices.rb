@@ -8,4 +8,8 @@ class EquilibriumIndices
   def self.sum_of_first_n(array, index)
     array.first(index).sum
   end
+
+  def self.sum_of_last_n(array, index)
+    array.last(index).sum
+  end
 end

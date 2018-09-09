@@ -7,7 +7,7 @@ describe EquilibriumIndices do
 	    subject{ EquilibriumIndices.find_indices(array) }
 
 			context 'Input as empty array' do
-				let(:array){ [] }
+				let(:array) { [] }
 
 			  it 'should return empty array' do
 			  	is_expected.to eq []
@@ -15,12 +15,42 @@ describe EquilibriumIndices do
 		  end
 
 		  context 'Input has two element_to_s' do
-				let(:array){ [-9, 10] }
+				let(:array) { [-9, 10] }
 
 			  it 'should return empty array' do
 			  	is_expected.to eq []
 			  end
 		  end
+
+		  describe 'multiple array elements' do
+		    subject{ EquilibriumIndices.find_indices(array) }
+
+			  context 'equilibrium indices found' do
+					let(:array) { [-7, 1, 5, 2, -4, 3, 0] }
+					let(:expected_indices) { [3, 6] }
+
+			    it 'returns an instance of array' do
+	          is_expected.to be_an_instance_of(Array)
+			    end
+
+				  it 'returns expected array' do
+				  	is_expected.to eq expected_indices
+				  end
+			  end
+
+			  context 'equilibrium indices not found' do
+					let(:array) { [1, 2, 3, 4, 5, 6] }
+					let(:expected_indices) { [] }
+
+			    it 'returns an instance of array' do
+	          is_expected.to be_an_instance_of(Array)
+			    end
+
+				  it 'returns expected array' do
+				  	is_expected.to eq expected_indices
+				  end
+			  end
+			end
 	  end
   end
 
